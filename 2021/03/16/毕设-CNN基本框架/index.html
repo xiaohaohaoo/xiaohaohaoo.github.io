@@ -21,29 +21,31 @@
   </script>
 
   <meta name="description" content="在有生的瞬间能遇到你，竟花光所有运气">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="毕设-CNN基本框架">
+<meta property="og:url" content="http://example.com/2021/03/16/%E6%AF%95%E8%AE%BE-CNN%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="在有生的瞬间能遇到你，竟花光所有运气">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-16T02:21:25.000Z">
+<meta property="article:modified_time" content="2021-03-16T02:27:44.537Z">
 <meta property="article:author" content="浩浩">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/03/16/%E6%AF%95%E8%AE%BE-CNN%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Hexo</title>
+  <title>毕设-CNN基本框架 | Hexo</title>
   
 
 
@@ -141,99 +143,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/16/%E6%AF%95%E8%AE%BE-%E5%9F%BA%E6%9C%AC%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="浩浩">
-      <meta itemprop="description" content="在有生的瞬间能遇到你，竟花光所有运气">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/16/%E6%AF%95%E8%AE%BE-%E5%9F%BA%E6%9C%AC%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="post-title-link" itemprop="url">毕设-基本神经网络</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-03-16 10:31:59 / 修改时间：10:32:32" itemprop="dateCreated datePublished" datetime="2021-03-16T10:31:59+08:00">2021-03-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%95%E8%AE%BE/" itemprop="url" rel="index"><span itemprop="name">毕设</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="基本神经网络-全连接"><a href="#基本神经网络-全连接" class="headerlink" title="基本神经网络(全连接)"></a>基本神经网络(全连接)</h2><h3 id="输入、隐藏、输出"><a href="#输入、隐藏、输出" class="headerlink" title="输入、隐藏、输出"></a>输入、隐藏、输出</h3><p><img src="https://pic2.zhimg.com/80/v2-b82571461091d92987049e139f043335_720w.jpg" alt="img" style="zoom: 100%;" /></p>
-<ol>
-<li><strong>输入神经元</strong>：位于输入层，主要是传递来自外界的信息进入神经网络中，比如图片信息，文本信息等，这些神经元不需要执行任何计算，只是作为传递信息，或者说是数据进入隐藏层。</li>
-<li><strong>隐藏神经元</strong>：位于隐藏层，隐藏层的神经元不与外界有直接的连接，它都是通过前面的输入层和后面的输出层与外界有间接的联系，因此称之为隐藏层，上图只是有1个网络层，但实际上隐藏层的数量是可以有很多的，远多于1个，当然也可以没有，那就是只有输入层和输出层的情况了。隐藏层的神经元会执行计算，将输入层的输入信息通过计算进行转换，然后输出到输出层。</li>
-<li><strong>输出神经元</strong>：位于输出层，输出神经元就是将来自隐藏层的信息输出到外界中，也就是输出最终的结果，如分类结果等。</li>
-</ol>
-<h2 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h2><h4 id="宽、高、深度-激活数据体的第三个维度"><a href="#宽、高、深度-激活数据体的第三个维度" class="headerlink" title="宽、高、深度(激活数据体的第三个维度)"></a>宽、高、深度(激活数据体的第三个维度)</h4><h4 id="卷积层"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层</h4><ol>
-<li><p>滤波，深度和数据深度保持一致，其他比较小。降低参数数量。</p>
-</li>
-<li><p>感受野，局部连接空间大小。<img src="https://pic4.zhimg.com/80/v2-94792663768ebde313002cdbedb5297f_720w.jpg" alt="img"></p>
-</li>
-<li><p>空间排列：深度（depth）x，步长（stride）和零填充（zero-paddinga）。</p>
-</li>
-<li><p>矩阵乘法实现卷积，x是输入， k是卷积核(k特征提取器)，a是卷积的结果，即特征图（feature map），先看输入和卷积核都是矩阵的情况：</p>
-<p><img src="https://www.zhihu.com/equation?tex=a+%3D+conv%5Cleft%28+x%2Ck+%5Cright%29" alt=""></p>
-<p><img src="https://pic3.zhimg.com/80/v2-8854dbe6f673e521f2875dcc9c25d30e_720w.jpg" alt="img"></p>
-<p>将输入划分为若干个与卷积核相同大小的不同子集，在分别和卷积核点乘</p>
-<p><img src="https://pic1.zhimg.com/80/v2-307373da0f4cfc7df7eceb45958b4bc0_720w.jpg" alt="img"></p>
-</li>
-</ol>
-<h4 id="池化层"><a href="#池化层" class="headerlink" title="池化层"></a>池化层</h4><p>池化层的主要目的是通过降采样的方式，在不影响图像质量的情况下，压缩图片，减少参数。</p>
-<h4 id="归一化层"><a href="#归一化层" class="headerlink" title="归一化层"></a>归一化层</h4><p>在卷积神经网络的结构中，提出了很多不同类型的归一化层，有时候是为了实现在生物大脑中观测到的抑制机制。但是这些层渐渐都<strong>不再流行</strong>，因为实践证明<strong>它们的效果即使存在，也是极其有限的</strong>。</p>
-<h4 id="全连接层"><a href="#全连接层" class="headerlink" title="全连接层"></a>全连接层</h4><p>这个常规神经网络中一样，它们的激活可以先用矩阵乘法，再加上偏差。</p>
-<h4 id="feature-map尺寸计算公式：-原图片尺寸-卷积核尺寸-步长-1。（必须为整数）"><a href="#feature-map尺寸计算公式：-原图片尺寸-卷积核尺寸-步长-1。（必须为整数）" class="headerlink" title="feature_map尺寸计算公式：[ (原图片尺寸 -卷积核尺寸)/ 步长 ] + 1。（必须为整数）"></a>feature_map尺寸计算公式：[ (原图片尺寸 -卷积核尺寸)/ 步长 ] + 1。（必须为整数）</h4>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -249,10 +162,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/16/%E6%AF%95%E8%AE%BE-CNN%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6/" class="post-title-link" itemprop="url">毕设-CNN基本框架</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          毕设-CNN基本框架
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -285,22 +197,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
-      
+        
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/03/16/%E6%AF%95%E8%AE%BE-%E5%9F%BA%E6%9C%AC%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" rel="next" title="毕设-基本神经网络">
+      毕设-基本神经网络 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
